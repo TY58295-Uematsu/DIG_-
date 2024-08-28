@@ -2,7 +2,6 @@ import axios from "axios"
 import { useCallback, useState } from "react"
 import { User } from "../types/api/user"
 import { useHistory } from "react-router-dom"
-import { useMediaQuery } from "@chakra-ui/react"
 import { useMessage } from "./useMessage"
 
 export const useAuth = () => {
