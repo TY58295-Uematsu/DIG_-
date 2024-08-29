@@ -3,12 +3,14 @@ import {memo, FC, useEffect, useCallback} from "react"
 import { UserCard } from "../organisms/user/UserCard";
 import { useAllUsers } from "../../hooks/useAllUsers";
 import { useSelectUser } from "../../hooks/useSelectUser.ts";
+import { useLoginUser } from "../../hooks/useLoginUser.ts";
 import { UserDetailModal } from "../organisms/user/UserDetailModal";
 
 export const UserManegement: FC = memo(() => {
   const {isOpen, onClose, onOpen} = useDisclosure();
   const {getUsers, users, loading} = useAllUsers();
-  
+  const {loginUser} = useLoginUser();
+  console.log(loginUser)
   useEffect(() => getUsers(), []);
 
   const {onSlectUser, selectedUser} = useSelectUser();  
