@@ -8,6 +8,8 @@ export const useAllUsers =() => {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState<Array<User>>([]);
   
+
+  //選択したユーザー情報を取得し、モーダルを表示させるフック
   const getUsers = useCallback(() => {
     setLoading(true);
     axios
@@ -21,5 +23,6 @@ export const useAllUsers =() => {
     })
       
   },[]);
+  
   return {getUsers, users, loading}
 }
